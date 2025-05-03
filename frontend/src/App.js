@@ -11,7 +11,9 @@ import Home from "./pages/Home";
 import ProductDetails from "./components/ProductDetails";
 import Checkout from './components/Checkout';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs'; 
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
