@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import ProductDetails from "./components/ProductDetails";
 import Checkout from './components/Checkout';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import 'swiper/css';
+import 'swiper/swiper-bundle.css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs'; 
 
