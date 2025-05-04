@@ -34,7 +34,7 @@ for collection_name in collections:
     collection = db[collection_name]
     
     # Fetch the first 100 documents
-    documents = list(collection.find({}).limit(100))
+    documents = list(collection.find({}).limit(50))
 
     # Convert ObjectId to string
     for doc in documents:
