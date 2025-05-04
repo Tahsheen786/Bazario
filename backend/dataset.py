@@ -18,12 +18,30 @@ else:
 import json
 from pymongo import MongoClient
 
+from pymongo import MongoClient
+import json
+
 # Connect to MongoDB (adjust the URI if needed)
 client = MongoClient("mongodb://localhost:27017/")
 
 # Select the database
-users = list(client["myapp"]["users"].find({}))
-for u in users:
-    u["_id"] = str(u["_id"])
-with open("backend/data/users.json", "w") as f:
-    json.dump(users, f, indent=4)
+db = client["amazon_handmade"]
+
+# List of collections to export
+collections = ["handmade_filtered_metadata"]
+
+for collection_name in collections:
+    collection = db[collection_name]
+    
+    # Fetch the first 100 documents
+    documents = list(collection.find({}).limit(100))
+
+    # Convert ObjectId to string
+    for doc in documents:
+        doc["_id"] = str(doc["_id"])
+
+    # Write to JSON file
+    with open(f"{collection_name}_first_100.json", "w", encoding="utf-8") as f:
+        json.dump(documents, f, indent=4, ensure_ascii=False)
+
+    print(f"Exported first 100 entries from '{collection_name}' to {collection_name}_first_100.json")
