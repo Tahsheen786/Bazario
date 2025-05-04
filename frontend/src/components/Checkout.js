@@ -245,13 +245,13 @@ style={{
           </div>
         </div>
         <p className="text-gray-black text-base font-medium">
-          ${product.price.toFixed(2)}
+        ₹{product.price.toFixed(2)}
         </p>
       </div>
 
       <hr />
       <div className="text-right mt-4 font-semibold text-lg">
-        Subtotal: ${product.price.toFixed(2)}
+        Subtotal: ₹{product.price.toFixed(2)}
       </div>
     </>
   ) : (

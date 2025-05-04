@@ -62,9 +62,9 @@ const ProductDetails = () => {
         </h2>
         <div className="flex items-center gap-2.5 mb-6">
           <p className="flex gap-1.5 items-center">
-          <span className="text-[#272343] text-2xl">${discountedPrice.toFixed(2)}</span>
+          <span className="text-[#272343] text-2xl">₹{discountedPrice.toFixed(2)}</span>
       <span className="text-[#272343] opacity-30 text-xl line-through">
-        ${increasedPrice.toFixed(2)}
+      ₹{increasedPrice.toFixed(2)}
       </span>
     </p>
     <span className="bg-[#F5813F] px-2.5 py-1.5 rounded-[4px] text-white text-sm">
