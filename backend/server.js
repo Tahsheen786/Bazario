@@ -1,48 +1,33 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
-const { connectDB } = require('./config/db');
-const app = express(); // ← This is missing!
+const fs = require('fs');
+const path = require('path');
+
+const app = express();
 app.use(cors());
 app.use(express.json());
-// Connect to MongoDB
-connectDB();
 
-const productSchema = new mongoose.Schema({}, { collection: 'handmade_filtered_metadata', strict: false });
-const Product = mongoose.model('Product', productSchema);
+// ⬇️ Load products from JSON instead of MongoDB
+const products = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'handmade_filtered_metadata.json'), 'utf-8'));
 
-// Fetch product by ID
-app.get("/products/:id", async (req, res) => {
+
+// ✅ Fetch product by ID from JSON
+app.get("/products/:id", (req, res) => {
   const { id } = req.params;
-  try {
-    const product = await Product.findById(id); // Mongoose auto-uses the correct collection
-    if (!product) {
-      return res.status(404).json({ error: "Product not found" });
-    }
-    res.json(product);
-  } catch (err) {
-    console.error("Error fetching product by ID:", err);
-    res.status(500).json({ error: "Internal server error" });
+  const product = products.find(p => p._id === id); // Match by string ID
+  if (!product) {
+    return res.status(404).json({ error: "Product not found" });
   }
+  res.json(product);
 });
 
-
-// Endpoint to get products
-app.get('/products', async (req, res) => {
-  try {
-    const products = await Product.find().limit(10); // Adjust limit as needed
-    res.json(products);
-  } catch (err) {
-    console.error('Error fetching products:', err);
-    res.status(500).json({ error: 'Failed to fetch products' });
-  }
+// ✅ Fetch all products from JSON
+app.get('/products', (req, res) => {
+  res.json(products.slice(0, 10)); // Adjust limit as needed
 });
 
-
-
-
-// Register Routes
+// 👤 Auth routes remain unchanged
 app.use('/api/auth', authRoutes);
 
 // Start Server
