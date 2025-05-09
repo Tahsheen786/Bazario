@@ -3,13 +3,13 @@
 Bazario is a full-stack e-commerce platform built with React for the frontend and Node.js for the backend. It provides a seamless shopping experience for customers, including product browsing, cart management, and secure checkout.
 
 ## **Table of Contents**
-Installation
-Features
-Tech Stack
-Setup
-Frontend Setup
-Backend Setup
-Running the Application
+Installation<br></br>
+Features<br></br>
+Tech Stack<br></br>
+Setup <br></br>
+Frontend Setup <br></br>
+Backend Setup <br></br>
+Running the Application<br></br>
 Usage
 
 ## **Features**
