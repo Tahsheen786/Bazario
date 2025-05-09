@@ -15,6 +15,9 @@ Bazario is a full-stack e-commerce platform built with React for the frontend an
 ## **Features**
 ### User Authentication (Sign Up / Login)
 ![Alt text](https://github.com/Tahsheen786/Bazario/blob/ec8d1487b35aa8e1117841e834442d4d61608764/frontend/public/Screenshot%202025-05-09%20124038.png)
+![Alt text](https://github.com/Tahsheen786/Bazario/blob/6084ce063225e4f613a4fe9d5d77976a7a0ebee8/frontend/public/Screenshot%202025-05-09%20124046.png)
+
+https://github.com/Tahsheen786/Bazario/blob/6084ce063225e4f613a4fe9d5d77976a7a0ebee8/frontend/public/Screenshot%202025-05-09%20124046.png
 ### Product Listings with detailed descriptions
 
 ### Shopping Cart functionality
