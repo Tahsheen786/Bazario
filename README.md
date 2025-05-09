@@ -23,9 +23,7 @@ The homepage features a vibrant banner showcasing ongoing sales or discounts to 
 ![Alt text](https://github.com/Tahsheen786/Bazario/blob/6084ce063225e4f613a4fe9d5d77976a7a0ebee8/frontend/public/Screenshot%202025-05-09%20124121.png)
 <br></br>
 **New Arrivals**: Displays the latest products added to the store.
-
 **Trending Section**: Highlights the most popular items among shoppers.
-
 **Hot Deals**: Features products with significant discounts or offers.
 
 ![Alt text](https://github.com/Tahsheen786/Bazario/blob/43262ba9b5dea28a7eaee8f8750dd72e1cdfbe24/frontend/public/Screenshot%202025-05-09%20191509.png)
@@ -44,9 +42,8 @@ Each product has a dedicated page with detailed information, including specifica
 <br></br>
 ![Alt text](https://github.com/Tahsheen786/Bazario/blob/2dd6851d8b4dac88c12df72a57fa7e0b3461196e/frontend/public/Screenshot%202025-05-09%20124220.png)
 
-
 ### Secure Checkout and Payment Integration
-<br></br>
+
 The checkout page requires users to fill in their billing information. The right side shows the order summary, including the total amount. Users can choose between:
 <br></br>
 **Cash on Delivery**: Clicking this option displays a pop-up confirming that the order has been placed.
