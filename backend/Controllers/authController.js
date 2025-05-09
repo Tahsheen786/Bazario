@@ -1,5 +1,5 @@
-const User = require("../models/userModel");
-const bcrypt = require("bcryptjs");
+const User = require('../models/userModel');
+const bcrypt = require('bcryptjs');
 
 // Register User
 const registerUser = async (req, res) => {
@@ -9,7 +9,7 @@ const registerUser = async (req, res) => {
     // Check if the user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+      return res.status(400).json({ message: 'User already exists' });
     }
 
     // Hash the password
@@ -24,9 +24,9 @@ const registerUser = async (req, res) => {
     // Save the new user to MongoDB
     await newUser.save();
 
-    res.status(201).json({ message: "User registered successfully!" });
+    res.status(201).json({ message: 'User registered successfully!' });
   } catch (error) {
-    res.status(500).json({ message: "Server error, please try again later" });
+    res.status(500).json({ message: 'Server error, please try again later' });
   }
 };
 
@@ -38,18 +38,18 @@ const loginUser = async (req, res) => {
     // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ message: "User not found" });
+      return res.status(400).json({ message: 'User not found' });
     }
 
     // Check if password is correct
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ message: "Invalid password" });
+      return res.status(400).json({ message: 'Invalid password' });
     }
 
-    res.status(200).json({ message: "User logged in successfully!" });
+    res.status(200).json({ message: 'User logged in successfully!' });
   } catch (error) {
-    res.status(500).json({ message: "Server error, please try again later" });
+    res.status(500).json({ message: 'Server error, please try again later' });
   }
 };
 

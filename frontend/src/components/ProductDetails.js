@@ -22,7 +22,7 @@ const ProductDetails = () => {
  // Use this ref to store the thumbs swiper instance
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`http://localhost:3002/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((err) => console.error("Failed to fetch product:", err));

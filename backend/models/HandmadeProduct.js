@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { amazonDB } = require('../config/db');  // Import the amazonDB connection
 
 // Define the product schema
 const handmadeProductSchema = new mongoose.Schema({

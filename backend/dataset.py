@@ -30,18 +30,19 @@ db = client["amazon_handmade"]
 # List of collections to export
 collections = ["handmade_filtered_metadata"]
 
+# Loop through all collections and print the first 5 products
 for collection_name in collections:
     collection = db[collection_name]
+    print(f"\nFirst 5 products from the collection '{collection_name}':")
     
-    # Fetch the first 100 documents
-    documents = list(collection.find({}).limit(50))
+    # Fetch the first 5 products from the collection
+    products = collection.find().limit(5)
+    
+    # Print each product, its data, and type
+    for product in products:
+        print(f"Product ID: {product['_id']}")  # Assuming product has an '_id' field
+        print(f"Product Data: {product}")
+        print(f"Type of product: {type(product)}\n")
 
-    # Convert ObjectId to string
-    for doc in documents:
-        doc["_id"] = str(doc["_id"])
-
-    # Write to JSON file
-    with open(f"{collection_name}_first_100.json", "w", encoding="utf-8") as f:
-        json.dump(documents, f, indent=4, ensure_ascii=False)
-
-    print(f"Exported first 100 entries from '{collection_name}' to {collection_name}_first_100.json")
+# Close the MongoDB connection
+client.close()
