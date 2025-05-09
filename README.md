@@ -55,6 +55,7 @@ The checkout page requires users to fill in their billing information. The right
 ![Alt text](https://github.com/Tahsheen786/Bazario/blob/f25b15db26d6e3b06b6d1124aaea39f53a4bdb66/frontend/public/Screenshot%202025-05-09%20202015.png)
 <br></br>
 **PhonePe Payment**: Generates a QR code with a timer. Once the payment is made and verified, a message appears confirming that the order has been placed successfully.
+
 ![Alt text](https://github.com/Tahsheen786/Bazario/blob/f25b15db26d6e3b06b6d1124aaea39f53a4bdb66/frontend/public/Screenshot%202025-05-09%20192540.png)
 
 
